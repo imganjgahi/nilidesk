@@ -1,0 +1,21 @@
+{
+  "name": "nilidesk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "front": "npm start --prefix ./frontend",
+    "back": "npm start --prefix ./backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imganjgahi/nilidesk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imganjgahi/nilidesk/issues"
+  },
+  "homepage": "https://github.com/imganjgahi/nilidesk#readme"
+}
