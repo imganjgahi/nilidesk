@@ -1,14 +1,12 @@
 const express = require('express')
+const placesController = require('../controllers/places')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    return res.json({ message: "it's works" })
-})
-router.get('/:pid', (req, res, next) => {
-    const error = new Error('Place Not Found')
-    error.code = 404
-    return next(error)
-})
+router.get('/', placesController.getPlaces)
+router.get('/:pid', placesController.getPlaceItemById)
+router.post('/', placesController.createNewPlaceItem)
+router.put('/:pid', placesController.updatePlaceItem)
+router.delete('/:pid', placesController.deletePlaceItem)
 
 module.exports = router

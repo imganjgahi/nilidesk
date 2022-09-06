@@ -4,10 +4,15 @@ const bodyParser = require('body-parser')
 const placesRoutes = require('./routes/places')
 const app = express()
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.use('/api/places', placesRoutes)
 
+app.use((req, res, next) => {
+    const error = new Error('Route is not Found')
+    error.code = 404
+    return next(error)
+})
 app.use((error, req, res, next) => {
     if (res.headerSent) {
         return next(error)
